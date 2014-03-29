@@ -4,15 +4,23 @@ if ( ! function_exists('keyPass'))
 {
     function keyPass(){
 
-        $aHeaders = getallheaders();
+    	if(isset($_POST)){
 
-        if (@$aHeaders['key'] != '1owvUtwudHylyenow15OkerirfudhocOve'){
+	        if ($_POST['key'] != '1owvUtwudHylyenow15OkerirfudhocOve'){
 
-            echo json_encode(array('error'=>'Acceso denegado!!!'));
+	            echo json_encode(array('error'=>'Acceso denegado!!!'));
 
-            exit();
+	            exit();
 
-        }
+	        }
+
+    	} else {
+
+    		echo json_encode(array('error'=>'Acceso denegado!!!'));
+
+	        exit();
+
+    	}
 
     }
 
