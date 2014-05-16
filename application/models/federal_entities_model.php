@@ -11,9 +11,11 @@ class Federal_entities_model extends CI_Model {
 
     	$query = $this->db
     	->select('id,nombre as name')
+        ->order_by("name", "asc") 
     	->get('estados');
 
     	return $query->result();
+
     }
 
 }

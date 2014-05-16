@@ -12,6 +12,7 @@ class Colonies_model extends CI_Model {
     	$query = $this->db
     	->select('id,nombre as name')
         ->where('codigo_postal_id',$postal_code_id)
+        ->order_by("name", "asc")
     	->get('colonias');
 
     	return $query->result();

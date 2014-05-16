@@ -12,6 +12,7 @@ class Postal_codes_model extends CI_Model {
     	$query = $this->db
     	->select('id,nombre as name')
         ->where('municipio_id',$municipality_id)
+        ->order_by("name", "asc")
     	->get('codigos_postales');
 
     	return $query->result();

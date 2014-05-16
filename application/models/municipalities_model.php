@@ -12,6 +12,7 @@ class Municipalities_model extends CI_Model {
     	$query = $this->db
     	->select('id,nombre as name')
         ->where('estado_id',$federal_entity_id)
+        ->order_by("name", "asc")
     	->get('municipios');
 
     	return $query->result();
